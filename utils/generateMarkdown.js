@@ -12,7 +12,7 @@ function renderLicenseLink(license) {
   return `https://opensource.org/license/${license}`;
 }
 
-// TODO: Create a function to generate markdown for README
+// A function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
 
@@ -42,7 +42,9 @@ ${data.usage}
 
 ## License
 
-This project is under the [${data.license} license](${renderLicenseLink(data.license)}).
+This project is under the [${data.license} license](${renderLicenseLink(
+    data.license
+  )}).
 
 ## Contributing
 
