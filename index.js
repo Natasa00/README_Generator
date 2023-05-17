@@ -1,5 +1,6 @@
 // Include packages needed for this application
 const inquirer = require("inquirer");
+const fs = require("fs/promises");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 // Create an array of questions for user input
@@ -59,7 +60,7 @@ function writeToFile(fileName, data) {}
 function init() {
   inquirer.prompt(questions).then((answers) => {
     const content = generateMarkdown(answers);
-    console.log(content);
+    fs.writeFile("./output/README.md", content);
   });
 }
 
